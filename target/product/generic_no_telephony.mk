@@ -20,7 +20,9 @@
 PRODUCT_PACKAGES := \
     Bluetooth \
     Camera2 \
+    CameraNext \
     Gallery2 \
+    GalleryNext \
     Music \
     MusicFX \
     OneTimeInitializer \
