@@ -22,7 +22,6 @@ PRODUCT_PACKAGES := \
     Camera2 \
     CameraNext \
     Gallery2 \
-    GalleryNext \
     Music \
     MusicFX \
     OneTimeInitializer \
