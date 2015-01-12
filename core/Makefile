@@ -1684,6 +1684,12 @@ ifeq ($(CHANGELOG),true)
 	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(TARGET_PRODUCT)-$(ROM_VERSION).txt
 endif
 
+ifeq ($(CRDROID_CHANGELOG),true)
+# Generate changelog
+	$(hide) ./vendor/crdroid/tools/changelog
+	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(CRDROID_VERSION)-$(TARGET_PRODUCT).txt
+endif
+
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true
 endif    # TARGET_DEVICE != generic*
