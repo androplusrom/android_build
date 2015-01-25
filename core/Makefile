@@ -1677,17 +1677,10 @@ bacon: otapackage
 	$(hide) $(MD5SUM) $(CM_TARGET_PACKAGE) > $(CM_TARGET_PACKAGE).md5sum
 	@echo -e ${CL_CYN}"Package Complete: $(CM_TARGET_PACKAGE)"${CL_RST}
 
-ifeq ($(CHANGELOG),true)
+ifeq ($(AP_CHANGELOG),true)
 # Generate changelog
-	@echo -e ${CL_GRN}"Generating Changelog"${CL_RST}
-	$(hide) ./vendor/pa/utils/changelog.sh
-	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(TARGET_PRODUCT)-$(ROM_VERSION).txt
-endif
-
-ifeq ($(CRDROID_CHANGELOG),true)
-# Generate changelog
-	$(hide) ./vendor/crdroid/tools/changelog
-	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(CRDROID_VERSION)-$(TARGET_PRODUCT).txt
+	$(hide) ./vendor/cm/tools/changelog
+	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(CM_VERSION)-$(TARGET_PRODUCT).txt
 endif
 
 endif    # recovery_fstab is defined
