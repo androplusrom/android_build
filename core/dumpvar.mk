@@ -67,7 +67,7 @@ HOST_OS_EXTRA:=$(shell python -c "import platform; print(platform.platform())")
 $(info ============================================)
 $(info   PLATFORM_VERSION_CODENAME=$(PLATFORM_VERSION_CODENAME))
 $(info   PLATFORM_VERSION=$(PLATFORM_VERSION))
-$(info   CM_VERSION=$(CM_VERSION))
+$(info   AP_VERSION=$(CM_VERSION))
 $(info   TARGET_PRODUCT=$(TARGET_PRODUCT))
 $(info   TARGET_BUILD_VARIANT=$(TARGET_BUILD_VARIANT))
 $(info   TARGET_BUILD_TYPE=$(TARGET_BUILD_TYPE))
@@ -82,11 +82,6 @@ ifdef GRAPHITE_OPTS
 $(info   GRAPHITE_OPTIMIZATIONS=$(GRAPHITE_OPTS))
 else
 $(info   GRAPHITE_OPTIMIZATIONS=false)
-endif
-ifdef STRICT_ALIASING
-$(info   STRICT_ALIASING=$(STRICT_ALIASING))
-else
-$(info   STRICT_ALIASING=false)
 endif
 $(info   HOST_ARCH=$(HOST_ARCH))
 $(info   HOST_OS=$(HOST_OS))
